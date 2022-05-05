@@ -15,3 +15,32 @@ Event photographers can't possibly capture every moment. Nowadays, we all have s
 # Other features include 
 + Secure login
 + link the app to photographer webpage
+
+## Data Model
++ User login credentials
++ Phone num
+
+## Schedule
+# Week 1: Django
++ Set up Dropbox account and create app
++ Develop backend [Django] - login page, home page, results output page
+# Week 2: Dropbox Api/ JavaScript
++ Import SDK, Render files/Render Thumbnails
++ create a callback function to get more files
++ move files
+# Week 3: Html/CSS 
++ Styling
++ Hosting and deployment
+# Week 4: Error Handling
++ Debugging
++ Styling
++ Adding additional features (time permitted)
+
+# Essential Features:
++ User login
++ Get Files, thumbnails, and move files
+
+# Nice-to-haves
++ Google Calendar Api -- allow clients to schedule dates
++ Associates file organizer with Google Calendar events
++ QR code converter for dropbox 'photo-albums'
