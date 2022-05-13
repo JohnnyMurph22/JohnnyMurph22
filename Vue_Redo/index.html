@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Rock. Paper. Scissors.</title>
+        <!-- bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <!-- google fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- style|css -->
+            <style> 
+            *{font-family: 'Montserrat', sans-serrif;
+                background-color: aliceblue;
+            }
+            
+            .title{font-size: 24px;
+                font-family: cursive;
+                
+            }
+
+            body {
+                background-color: #CCC;
+            }
+            
+            .options div { 
+                display: flex;
+                justify-content: center;
+                
+            }
+            
+            .options {
+                background: none;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                font-size: 2rem;
+                transition:100ms;      /*  smooth animation */
+            }
+            
+            /* indicate they are clickable by scaling up image*/
+            .options:hover{
+                transform: scale(1.2);
+            }
+            
+            .text {
+                margin-top: 1rem;
+                display: grid;
+                justify-content: center;
+                grid-template-columns: repeat(2, 1fr);
+                justify-items: center;
+                align-items: center
+            }   /* set two column grid */
+            
+            
+            .text {
+                margin-left: .1rem;
+                font-size: larger;
+                color: black
+            
+            }
+            </style>
+    </head>
+    <body>
+        <div id="app">
+            <div class="container">
+                <div class="row">
+                    <div class="d-flex flex-row justify-content-between">
+                        <div class="title">Rock . Paper . Scissors . </div>
+                        <div class="d-flex scores flex-row">
+                            <div class="d-flex align-items-center you mr-3 justify-content-between">
+                                <span class="text">Your Choice: </span>
+                            </div>
+                            <div class="d-flex align-items-center you mr-3 justify-content-between">
+                                <span class="text">Computer Choice: </span>
+                            </div>
+                            <div class="d-flex align-items-center you mr-3 justify-content-between">
+                                <span class="text">Result: </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="d-flex flex-row justify-content-between align-items-center">
+                        <div class="options">
+                            <div class="r" :class="userChoice === 'Rock' ? 'checked': ''" @click="options('Rock')">🗿</div>
+                            <div class="p" :class="userChoice === 'Paper' ? 'checked': ''" @click="options('Paper')">📜</div>
+                            <div class="s" :class="userChoice === 'Scissor' ? 'checked': ''" @click="options('Scissor')">✂️</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+        <div id="app">
+            {{ message }}
+        </div>
+        
+        <script>
+            var app = new Vue({
+                el: '#app',
+                data: {
+                    options: ['Rock', 'Paper', 'Scissor'],
+                    userChoice:'',
+                    computerChoice: '',
+                    result: '',
+
+
+                },
+                methods: {
+                    chooseOption(){
+                        this.userChoice = choice;
+                    },
+
+                    gameGenerator(){
+                        this.computerChoice = this.options[Math.floor(Math.random()* this.options.length)];
+                        if (computerChoice === userChoice){
+                            result = 'its a draw!'
+                        }
+                        if (computerChoice === 'rock' && userChoice === 'paper'){
+                            result = 'you win!'
+                        }
+                        if (computerChoice === 'paper' && userChoice === 'rock'){
+                            result = 'you lost!'
+                        }
+                        if (computerChoice === 'scissors' && userChoice === 'paper'){
+                            result = 'you lose!'
+                        }
+                        if (computerChoice === 'scissors' && userChoice === 'rock'){
+                            result = 'you win!'
+                        }
+                        if (computerChoice === 'paper' && userChoice === 'scissors'){
+                            result = 'you win!'
+                        }
+                        if (computerChoice === 'rock' && userChoice === 'scissors'){
+                            result = 'you lose!'
+                        }
+
+                    }
+                },
+                created: function() {
+
+                }
+            })
+        </script>
+    
+</html>
