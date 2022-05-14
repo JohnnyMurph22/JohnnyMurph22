@@ -9,7 +9,8 @@
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <!-- google fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,100&display=swap" rel="stylesheet">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <!-- import vue -->
+        <script src="https://unpkg.com/vue@3"></script>
         <!-- style|css -->
             <style> 
             *{font-family: 'Montserrat', sans-serrif;
@@ -28,6 +29,10 @@
             .options div { 
                 display: flex;
                 justify-content: center;
+                margin: auto;
+                grid-template-rows: auto;
+
+                
                 
             }
             
@@ -40,10 +45,6 @@
                 transition:100ms;      /*  smooth animation */
             }
             
-            /* indicate they are clickable by scaling up image*/
-            .options:hover{
-                transform: scale(1.2);
-            }
             
             .text {
                 margin-top: 1rem;
@@ -78,6 +79,7 @@
                             </div>
                             <div class="d-flex align-items-center you mr-3 justify-content-between">
                                 <span class="text">Result: </span>
+                                <div class="result" :class="result" v-if="result">{{result}}</div>
                             </div>
                         </div>
                     </div>
@@ -87,65 +89,69 @@
                 <div class="col-md-6 mx-auto">
                     <div class="d-flex flex-row justify-content-between align-items-center">
                         <div class="options">
-                            <div class="r" :class="userChoice === 'Rock' ? 'checked': ''" @click="options('Rock')">🗿</div>
+                            <!-- <div class="r" :class="userChoice === 'Rock' ? 'checked': ''" @click="options('Rock')">🗿</div>
                             <div class="p" :class="userChoice === 'Paper' ? 'checked': ''" @click="options('Paper')">📜</div>
-                            <div class="s" :class="userChoice === 'Scissor' ? 'checked': ''" @click="options('Scissor')">✂️</div>
+                            <div class="s" :class="userChoice === 'Scissor' ? 'checked': ''" @click="options('Scissor')">✂️</div> -->
+                            <button v-on:click = "userChoice === 'Rock' "> 🗿</button>
+                            <button v-on:click = "userChoice === 'Paper' "> 📜</button>
+                            <button v-on:click = "userChoice === 'Scissor' "> ✂️</button>
+
                         </div>
                     </div>
                 </div>
             </div>
     </body>
-
-        <div id="app">
-            {{ message }}
-        </div>
         
         <script>
-            var app = new Vue({
-                el: '#app',
-                data: {
-                    options: ['Rock', 'Paper', 'Scissor'],
-                    userChoice:'',
-                    computerChoice: '',
-                    result: '',
+            const {rpsApp} = Vue
 
-
-                },
-                methods: {
-                    chooseOption(){
-                        this.userChoice = choice;
+            rpsApp({
+                    data() {
+                        return {
+                            options: ['Rock', 'Paper', 'Scissor'],
+                            userChoice:'',
+                            computerChoice: '',
+                            result: '',
+                        }
                     },
 
-                    gameGenerator(){
-                        this.computerChoice = this.options[Math.floor(Math.random()* this.options.length)];
-                        if (computerChoice === userChoice){
-                            result = 'its a draw!'
-                        }
-                        if (computerChoice === 'rock' && userChoice === 'paper'){
-                            result = 'you win!'
-                        }
-                        if (computerChoice === 'paper' && userChoice === 'rock'){
-                            result = 'you lost!'
-                        }
-                        if (computerChoice === 'scissors' && userChoice === 'paper'){
-                            result = 'you lose!'
-                        }
-                        if (computerChoice === 'scissors' && userChoice === 'rock'){
-                            result = 'you win!'
-                        }
-                        if (computerChoice === 'paper' && userChoice === 'scissors'){
-                            result = 'you win!'
-                        }
-                        if (computerChoice === 'rock' && userChoice === 'scissors'){
-                            result = 'you lose!'
-                        }
+                    methods: {
+                        chooseOption(){
+                            this.userChoice = choice;
+                            this.result = '';
+                            this.computerChoice = '';
+                        },
 
-                    }
-                },
-                created: function() {
+                        gameGenerator(){
+                            if (computerChoice === userChoice){
+                                result = 'its a draw!'
+                            }
+                            if (computerChoice === 'rock' && userChoice === 'paper'){
+                                result = 'you win!'
+                            }
+                            if (computerChoice === 'paper' && userChoice === 'rock'){
+                                result = 'you lost!'
+                            }
+                            if (computerChoice === 'scissors' && userChoice === 'paper'){
+                                result = 'you lose!'
+                            }
+                            if (computerChoice === 'scissors' && userChoice === 'rock'){
+                                result = 'you win!'
+                            }
+                            if (computerChoice === 'paper' && userChoice === 'scissors'){
+                                result = 'you win!'
+                            }
+                            if (computerChoice === 'rock' && userChoice === 'scissors'){
+                                result = 'you lose!'
+                            }
 
-                }
-            })
+                        }
+                    },
+                    computerGenerator: function() {
+                        this.computerChoice = this.options[Math.floor(Math.random()* this.options.length)]
+                    },
+                //lifecycle methods
+                }).mount('#app')
         </script>
     
 </html>
