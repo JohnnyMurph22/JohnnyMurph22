@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Site</title>
+    {% comment %}
+    <link rel ="stylesheet"type="text/css" href="{% static 'css/stlye.css %}"> 
+    {% endcomment %}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/03a227aeed.js" 
+    crossorigin="anonymous"></script>
+    
+</head>
+<body>
+    <div class="container">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong> You should check in on some of those fields below.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %} 
+        {% endif %}
+        
+
+    </div>
+    <!-- header -->
+    <header class ="header">
+        <div class ="nav-section">
+            <div class = "brand-and-navBtn">
+                <span class ="brand-name">
+                    Wingate Photography
+                </span>
+                <span class = "navBtn flex">
+                    <i class ="fas fa-bars"></i>
+                </span>
+            </div>
+
+            <!-- navigation menu -->
+            <nav class ="top-nav">
+                <ul>
+                    <li><a href ="index.html" class="active">Home</a></li>
+                    <li><a href ="gallery.html">Gallery</a></li>
+                    <li><a href ="contact.html">Contact</a></li>
+                    <li><a href ="{% url 'login' %}">Login</a></li>
+                </ul>
+            </nav>
+            <span class ="search-icon">
+                <i class = "fas fa-search"></i>
+            </span>
+        </div>
+
+        <div class = "container about">
+            <div class = "about-content">
+                <div class = "about-img flex">
+                    <img src = "https://media.istockphoto.com/photos/young-man-with-backpack-taking-selfie-portrait-on-a-mountain-smiling-picture-id1329031407?b=1&k=20&m=1329031407&s=170667a&w=0&h=J6qRqj9hbKtSVwIfMJhcRXf3AEyAOshph2IAbPHwNUo=" alt= "">
+                </div>
+                <h2>I'm John Smith</h2>
+                <h3>Professional Photographer</h3>
+                <h6> Bio: </h6>
+                <blockquote>
+                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Corrupti debitis repudiandae aperiam iste quaerat. Eaque
+                    cupiditate natus pariatur optio minus, non, ullam omnis 
+                    architecto laudantium maxime, aliquid hic magnam dolore."
+                    <span>-Lorem</span>
+                </blockquote>
+            </div>
+            <div class = "social-icons">
+                <ul>
+                    <li>
+                        <a href ="#"><i class="fab fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href ="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href ="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- main -->
+    <section class  = "section-one">
+        <div class = "container">
+            <div class = "sec-one-left">
+                <!-- image here -->
+                <div>
+                    <h3>Services offered:</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur, 
+                    adipisicing elit. Eum voluptatum atque incidunt 
+                    ex velit, doloribus unde tenetur autem? Accusamus, 
+                    dicta.
+                    </p>
+                    <a href = "#" class = "btn">view all</a>
+                </div>
+            </div>
+            
+            <div class = "sec-one-right">
+                <div class = "work-content">
+                    <h3>Professional Photographer</h3>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Tempore, recusandae magni sit quam culpa eius, magnam vel 
+                        explicabo commodi praesentium, officia et quidem. Necessitatibus
+                        sed sunt nostrum, quia tempora porro.</p>
+                        <a href = "#" class = "btn">view all</a>
+                </div>
+                <div class= "work-imgs">
+                    <div class = "work-img-1">
+                        <!-- image here -->
+                    </div>
+                    <div class = "work-img-1">
+                        <!-- image here -->
+                    </div>
+                </div>
+                <h3>"Taking an image, freezing a moment, reveals how rich reality truly is."</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class = "section-two">
+        <div class="container">
+            <h2> FOLLOW ON INSTAGRAM</h2>
+            <span> @john_smith</span>
+            <div class ="insta-imgs">
+                <div>
+                    <img src = "https://cdn.pixabay.com/photo/2022/05/10/11/12/tree-7186835__480.jpg" >
+                    <div class = "icon-overlay flex">
+                        <i class = "fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div>
+                    <img src = "https://cdn.pixabay.com/photo/2022/04/29/00/27/puppy-7162203__340.jpg" >
+                    <div class = "icon-overlay flex">
+                        <i class = "fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div>
+                    <img src = "https://cdn.pixabay.com/photo/2022/03/16/18/37/flowers-7073059__340.jpg" >
+                    <div class = "icon-overlay flex">
+                        <i class = "fab fa-instagram"></i>
+                    </div>
+                </div>
+                <div>
+                    <img src = "https://cdn.pixabay.com/photo/2021/10/30/08/27/mountains-6753786__340.jpg">
+                    <div class = "icon-overlay flex">
+                        <i class = "fab fa-instagram"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end of main -->
+
+    <!-- footer -->
+    <footer class = "footer">
+        <div class = "footer-container container">
+            <h2>John Smith </h2>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Doloremque aspernatur animi accusantium et veniam cupiditate
+                at nesciunt quod asperiores minus.</p>
+        </div>
+        <div> 
+        <h3>Free Subscription!</h3>
+            <p> Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                Doloremque aspernatur animi accusantium et veniam cupiditate
+                at nesciunt quod asperiores minus.
+            </p>
+            <div class = "subs">
+                <i class = "fas fa-envelope"></i>
+                <input type = "email" id = "email"
+                placeholder="Email Address">
+                <button type = "submit"> SUBSCRIBE</button>
+            </div>
+        </div>
+        <p>&copy; Copyright Photo Album Organizer</p>
+    </footer>
+    <!--  end of footer  -->
+</body>
+</html>
