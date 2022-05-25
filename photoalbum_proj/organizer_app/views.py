@@ -10,7 +10,7 @@ def index(request):
 
 
 def home_view(request):
-    name = ""
+    name = "Welcome to Google"
 
     obj = Website.objects.get(id=1)
     context = {
@@ -18,7 +18,7 @@ def home_view(request):
         'obj': obj,
     }
 
-    return render(request, 'home.html', context)
+    return render(request, 'organizer_app\home.html', context)
 
 # def home(request):
 #     if request.method == "POST":
@@ -35,22 +35,24 @@ def fileorg(request):
     import shutil
 
     # from pathlib import Path
-
-    # create a varible called path that takes the input of the directory to organize
-    path = Directory()
-    # create a variable called files consisting of a list of files 
-    files = os.listdir(path)
-    #  using for loop, we travel through every file, split the file name and extension of the files 
-    for file in files: 
-        filename,extension = os.path.splitext(file)
-        extension = extension[1:]
-    # if the extension directory already exists move the file to that directory 
-        if os.path.exists(path+'/'+extension):
-            shutil.move(path+'/'+file, path+'/'+extension+'/'+file)
-            message = 'files moved to appropriate directory'
-    # if not make new directory and move the file into it 
-        else:
-            os.makedirs(path+'/'+extension)
-            shutil.move(path+'/'+file, path+'/'+extension+'/'+file)
-            message = 'new directories created as required'
+    if request.method == 'POST':
+        form = Directory(request.POST)
+        if form.is_valid():
+            # create a varible called path that takes the input of the directory to organize
+            path = form
+            # create a variable called files consisting of a list of files 
+            files = os.listdir(path)
+            #  using for loop, we travel through every file, split the file name and extension of the files 
+            for file in files: 
+                filename,extension = os.path.splitext(file)
+                extension = extension[1:]
+            # if the extension directory already exists move the file to that directory 
+                if os.path.exists(path+'/'+extension):
+                    shutil.move(path+'/'+file, path+'/'+extension+'/'+file)
+                    message = 'files moved to appropriate directory'
+            # if not make new directory and move the file into it 
+                else:
+                    os.makedirs(path+'/'+extension)
+                    shutil.move(path+'/'+file, path+'/'+extension+'/'+file)
+                    message = 'new directories created as required'
     return render(request, {'path': path}, message)

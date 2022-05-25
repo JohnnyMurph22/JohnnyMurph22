@@ -14,6 +14,236 @@
     crossorigin="anonymous"></script>
     
 </head>
+{% block content %}
+
+{% endblock%}
+
+
+
+<!-- <style>
+
+*{
+    font-family: 'Montserrat', sans-serrif;
+    padding: 0;
+    margin:0;
+    box-sizing: border-box;
+}
+section.section-one{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    text-decoration: underline;
+
+}
+section.section-two{
+
+}
+:root{ 
+    --white: #ddd;
+    --dark:#111;
+    --darkGrey:#474b4f;
+    --lightGrey: #6b6e70;
+    --lightBlue: #0d6efd ;
+    --darkBlue: #0a009c; 
+    --transition: all .5s ease;
+}
+body{
+    line-height: 1.6;
+}
+img{
+    width:100%;
+    display: block;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+h1,h2,h3, h4, h5, h6, p{
+    margin: 15px 0;
+}
+/* Utility Classes */
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 90vw;
+    margin: 0 auto;
+}
+.btn{
+    background: var(--darkBlue);
+    border: none;
+    display: block;
+    width: 150px;
+    text-align: center;
+    color: var(--darkBlue);
+    text-transform: uppercase;
+    background: transparent;
+    font-size: 15px;
+    padding: 12px;
+    border: 2px solid var(--darkBlue);
+    border-radius: 25px;
+    margin: 15px 0;
+    transition: var(--transition);
+}
+.btn:hover{
+    background: var(--darkBlue);
+    color: #fff;
+}
+.active{
+    color: var(--lightBlue)!important;
+}
+/* End of Utility Classes */
+
+/* Header Styling */
+.header{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("images/header.jpg") center/cover no-repeat;
+    color: #fff;
+}
+.top-nav a{
+    color: #fff;
+}
+.brand-and-navBtn{
+    background: #000;
+    position: relative;
+    z-index: 999;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    font-size: 24px;
+    padding: 15px 25px;
+    color: var(--white);
+}
+.brand-name{
+    letter-spacing: 5px;
+    cursor: pointer;
+}
+.navBtn{
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--white);
+    cursor: pointer;
+}
+.navBtn:hover{
+    background: #fff;
+    color: #000;
+    transition: var(--transition);
+}
+.top-nav{
+    background: #000;
+    transform: translateY(-600px);
+    transition: var(--transition);
+}
+.showNav{
+    transform: translateY(0);
+}
+.search-icon{
+    display: none;
+}
+.top-nav ul li{
+    padding: 10px 0;
+}
+.top-nav ul a{
+    position: relative;
+    font-weight: 500;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+}
+.top-nav ul a::after{
+    content: "";
+    height: 2px;
+    background: var(--lightBlue);
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    transition: var(--transition);
+}
+.top-nav ul a:hover::after{
+    width: 100px;
+}
+.about{
+    margin-top: -160px;
+}
+.about-content img{
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+.about-img{
+    background: #fff;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.about-content h2{
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 35px;
+    color: var(--lightBlue);
+}
+.about-content h3{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 100;
+    background: rgba(255, 255, 255, 0.1);
+    width: 400px;
+    margin: 35px auto;
+    text-align: center;
+}
+blockquote{
+    font-size: 20px;
+    font-weight: 300;
+    opacity: 0.9;
+    width: 60vw;
+    margin: 45px auto 15px auto;
+    text-align: center;
+}
+blockquote span{
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--darkBlue);
+    font-weight: 300;
+    letter-spacing: 5px;
+    display: block;
+}
+.social-icons{
+    width: 350px;
+    margin: 40px auto 0 auto;
+    padding-bottom: 30px;
+}
+.social-icons ul a{
+    color: #fff;
+    font-size: 30px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+.social-icons ul{
+    display: flex;
+    justify-content: space-around;
+}
+.social-icons ul a:hover{
+    background: var(--lightBlue);
+    border-color: var(--lightBlue);
+}
+</style> -->
 <body>
     <div class="container">
         {% if messages %}
@@ -32,7 +262,7 @@
         <div class ="nav-section">
             <div class = "brand-and-navBtn">
                 <span class ="brand-name">
-                    Wingate Photography
+                    Photo Album Organizer 
                 </span>
                 <span class = "navBtn flex">
                     <i class ="fas fa-bars"></i>
@@ -42,10 +272,9 @@
             <!-- navigation menu -->
             <nav class ="top-nav">
                 <ul>
-                    <li><a href ="index.html" class="active">Home</a></li>
+                    <li><a href ="{% url 'organizer_app:qrc' %}" class="active">Home</a></li>
                     <li><a href ="gallery.html">Gallery</a></li>
-                    <li><a href ="contact.html">Contact</a></li>
-                    <li><a href ="{% url 'login' %}">Login</a></li>
+                    <li><a href ="{% url 'Login:login' %}">Login</a></li>
                 </ul>
             </nav>
             <span class ="search-icon">
@@ -60,7 +289,7 @@
                 </div>
                 <h2>I'm John Smith</h2>
                 <h3>Professional Photographer</h3>
-                <h6> Bio: </h6>
+
                 <blockquote>
                     "Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                     Corrupti debitis repudiandae aperiam iste quaerat. Eaque
@@ -90,36 +319,39 @@
     <section class  = "section-one">
         <div class = "container">
             <div class = "sec-one-left">
-                <!-- image here -->
+                
                 <div>
-                    <h3>Services offered:</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, 
-                    adipisicing elit. Eum voluptatum atque incidunt 
-                    ex velit, doloribus unde tenetur autem? Accusamus, 
-                    dicta.
+                    <h3>Welcome to my Photo Album Application</h3>
+                    <p>
+                        <h4> This is how it works:</h4>
+                        <ul>
+                            <li>
+                                <p> Scan the QR Code and upload your images to my dropbox.</p>
+                            </li>
+                            <li>
+                                <p> I will edit the images and organize them accordingly.</p>
+                            </li>
+                            <li>
+                                <p> Then upload and restore them back to dropbox.</p>
+                            </li>
+                        </ul>
                     </p>
-                    <a href = "#" class = "btn">view all</a>
                 </div>
             </div>
             
             <div class = "sec-one-right">
+
                 <div class = "work-content">
                     <h3>Professional Photographer</h3>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Tempore, recusandae magni sit quam culpa eius, magnam vel 
-                        explicabo commodi praesentium, officia et quidem. Necessitatibus
-                        sed sunt nostrum, quia tempora porro.</p>
-                        <a href = "#" class = "btn">view all</a>
+                    {% comment %}
+                    <!-- <form action="{% url 'fileorg' %}" method="POST"> -->
+                    {% endcomment %}
+                        {% csrf_token %}
+                        {{form}}
+                        <input type="submit" value="path">
+                    </form>
                 </div>
-                <div class= "work-imgs">
-                    <div class = "work-img-1">
-                        <!-- image here -->
-                    </div>
-                    <div class = "work-img-1">
-                        <!-- image here -->
-                    </div>
-                </div>
-                <h3>"Taking an image, freezing a moment, reveals how rich reality truly is."</h3>
+
             </div>
         </div>
     </section>

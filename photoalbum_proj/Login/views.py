@@ -10,15 +10,18 @@ def login_user(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
+            print('goes to index')
             login(request, user)
             return redirect('index')
             # redirect to a success page.
         else: 
+            print('goes to login')
             # return an 'invalid login' error
             messages.success(request, ("Unsuccessful login attempt, please try again..."))
             return redirect('login')
     
     else:
+        print('go to authentication html')
         return render(request, 'authentication/login.html', {})
 
 
