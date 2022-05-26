@@ -1,0 +1,23 @@
+{% extends 'organizer_app/base.html' %}
+
+{% block content %}
+
+    <h1 class="text-center mt-3 text-info">Welcome to PhotoAlbum Organizer</h1>
+
+        <div class="captcha">
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert text-center mt-5 alert-{{message.tags}}">
+                {{message}}
+            </div>
+            {% endfor %}
+            {% endif %}
+            <form action ="" method="post" class="text-center mt-5">
+                {% csrf_token %}
+                {{form.captcha}}
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+        </div> 
+        
+
+{% endblock %}

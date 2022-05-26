@@ -1,10 +1,8 @@
-{% extends 'organizer_app/index.html' %}
+{% extends 'organizer_app/base.html' %}
 
 {% block content %}
 
-    <h1>Login</h1>
-<br/><br>
-
+    <h1>Welcome to PhotoAlbum Organizer</h1>
 
     <form action="" method=POST>
         {% csrf_token %}
@@ -12,38 +10,16 @@
         <form>
             <div class="mb-3">
               <label for="exampleInputUsername1" class="form-label">Username</label>
-              <input type="email" class="form-control" name="username">
+              <input type="username" class="form-control" name="username">
               
             </div>
             <div class="mb-3">
               <label for="exampleInputPassword1" class="form-label">Password</label>
               <input type="password" class="form-control" name="password">
             </div>
-            <div class="captcha">
-                {% if messages %}
-                {% for message in messages %}
-              <div class="alert text-center mt-5 alert-{{message.tags}}">
-                  {{message}}
-              </div>
-              {% endfor %}
-              {% endif %}
-              <form action ="" method="post" class="text-center mt-5">
-                  {% csrf_token %}
-                  {{form.captcha}}
-                  <input type="submit" value="Submit" class="btn btn-primary">
-              </form>
-
-            </div>
-              
+            <input type="submit" value="Submit" class="btn btn-secondary">
         </form>
-        
-
-        <input type="submit"
-        value="Submit" class="btn btn-secondary">
-
-
+    
     </form> 
-   
 
-<br/><br/>
 {% endblock %}
