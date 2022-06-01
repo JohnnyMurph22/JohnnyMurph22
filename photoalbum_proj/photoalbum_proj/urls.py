@@ -18,8 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-from organizer_app.views import home_view
-
+from . import views 
+app_name = 'projects'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,7 @@ urlpatterns = [
     path('', include('organizer_app.urls')),
     path('login/', include('Login.urls')),
     path('login/', include('django.contrib.auth.urls')),
-    path('', home_view, name='home')
+    path('qrc/', views.qrc_view, name='qrc')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -9,16 +9,16 @@ def index(request):
     return render(request, 'organizer_app/index.html')
 
 
-def home_view(request):
-    name = "Welcome to Google"
+# def home_view(request):
+#     name = "Welcome to Google"
 
-    obj = Website.objects.get(id=1)
-    context = {
-        'name': name,
-        'obj': obj,
-    }
+#     obj = Website.objects.get(id=1)
+#     context = {
+#         'name': name,
+#         'obj': obj,
+#     }
 
-    return render(request, 'organizer_app\home.html', context)
+#     return render(request, 'organizer_app\home.html', context)
 
 # def home(request):
 #     if request.method == "POST":
