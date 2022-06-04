@@ -18,8 +18,8 @@ $("#submit-button").click(function(event){
             pokemonCard.attr("src", pokemon.images.small);
             $("#card-container").append(pokemonCard);
         }
-    
-        
     });
 });
 
+// function to save selected pokemon cards
+cardSaveBtn.add

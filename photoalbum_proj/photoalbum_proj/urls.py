@@ -24,7 +24,7 @@ app_name = 'projects'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('captcha', include('captcha.urls')),
-    path('', include('organizer_app.urls')),
+    path('org/', include('organizer_app.urls')),
     path('login/', include('Login.urls')),
     path('login/', include('django.contrib.auth.urls')),
     path('qrc/', views.qrc_view, name='qrc')
