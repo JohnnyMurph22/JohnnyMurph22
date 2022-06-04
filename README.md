@@ -1,46 +1,44 @@
-﻿# Photo Album Organizer 
+﻿# Pokemon TCG Deck Builder
  Capstone project for PDX Codeguild 
  
  ## Project Overview
- An app to organize and compose a photo album based on client, date, event, and location. Additionally, assist in searching, retrieving, migrating, and deleting photos. I will be building the app using the Dropbox API https://www.dropbox.com/developers. The idea is to provide a means for a photographer to extend his dropbox info for his clients to upload photos of an event to one universal repository, where the photographer can edit. The app will aide in organizing all the photos by key variables to allow for ease of retrieval, editing, and constituting client-event organized photo albums. 
- 
+An app to virtually organize a model of the pokemon cards in your physical inventory. The user will be able to search, retreieve, and save pokemon cards by name, TCG id, and set. I will be building the app using the Pokemon API https://https://api.pokemontcg.io/v2/ and pokemon developers portal:https://docs.pokemontcg.io/getting-started/migration. The idea is to provide a means for a collectors to save pokemon cards into a database for inventory management. Now you can take all your pokemon cards put in a card protector and trading case; whilst maintaining inventory online. 
+
 ## Features
-Event photographers can't possibly capture every moment. Nowadays, we all have smart phones with integrated cameras. Allow event attendees to drop all their photos into a central repository where a professional photographer can edit and organize into albums you'll want to remember forever.
+Inventory management is messy. Allow for convenient storage whilst maintaining record of your personal inventory on your computer or smart device. Simply, logon to your secure account and search millions of pokemon cards and create your pokemon deck for inventory access.
 
 # You will be able to 
-+ share photos
-+ delete photos
-+ organize and compose albums by client/event categories
++ search pokemon cards
++ delete pokemon cards
++ organize a virtual deck
 
 # Other features include 
 + Secure login
-+ link the app to photographer webpage
++ django captcha
 
 ## Data Model
-+ User login credentials
-+ Phone num
++ Pokemon TCG
 
 ## Schedule
 # Week 1: Django
-+ Set up Dropbox account and create app
-+ Develop backend [Django] - login page, home page, results output page
-# Week 2: Dropbox Api/ JavaScript
-+ Import SDK, Render files/Render Thumbnails
-+ create a callback function to get more files
-+ move files
++ Launch django begin backend development
++ home page, login page, captcha, pokemon app page
+# Week 2: Pokemon Api/ JavaScript
++ create a function to search and save pokemon cards 
+
 # Week 3: Html/CSS 
-+ Styling
-+ Hosting and deployment
++ Setup Vue
++ 
 # Week 4: Error Handling
-+ Debugging
++ Debugging paths
 + Styling
 + Adding additional features (time permitted)
 
 # Essential Features:
 + User login
-+ Get Files, thumbnails, and move files
++ search and save pokemon cards
 
 # Nice-to-haves
-+ Google Calendar Api -- allow clients to schedule dates
-+ Associates file organizer with Google Calendar events
-+ QR code converter for dropbox 'photo-albums'
++ QR code converter for 'pokemon decks'
++ added search criteria: set, type, subtypes, rarities
++ automated alerts when buyers are searching for cards in your inventory
