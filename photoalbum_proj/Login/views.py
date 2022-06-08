@@ -32,7 +32,7 @@ def captcha(request):
         form = MyForm(request.POST)
         if form.is_valid():
             messages.success(request, "Success!")
-            return render(request, 'organizer_app\home.html',{})
+            return render(request, 'organizer_app\poke.html',{})
         else:
             messages.error(request, "Wrong Captcha")
     form = MyForm()

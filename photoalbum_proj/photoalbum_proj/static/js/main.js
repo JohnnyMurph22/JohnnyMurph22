@@ -1,3 +1,10 @@
+// selector
+let savedCollectedCards = document.getElementById('savedCards');
+
+// listener
+savedCollectedCards.addEventListener('click', showCollection)
+
+
 // make on click search function, run a search when we click on the button, grab with jquery, to search pokemon in  
 
 $("#submit-button").click(function(event){
@@ -19,7 +26,29 @@ $("#submit-button").click(function(event){
             $("#card-container").append(pokemonCard);
         }
     });
+    // add pokemon card 
+    var collectedCards = [];
+    var collectedCards = localStorage.getItem("poke-card");
+
+    if (savedCollectedCards !== null) {
+        collectedCards= JSON.parse(savedCollectedCards);
+    }
+
+   
+    pokemonCard.addEventListener('click', function(){
+        collectedCards.push(pokemonCard.className);
+        localStorage.setItem("poke-card", JSON.stringify(collectedCards));
+        console.log(collectedCards);
+        alert(localStorage.getItem('poke-card'))
+    })
 });
 
-// function to save selected pokemon cards
-cardSaveBtn.add
+// selector
+
+
+
+// show saved pokemon cards collection
+
+function showCollection(){
+
+}

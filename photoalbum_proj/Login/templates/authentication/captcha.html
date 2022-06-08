@@ -1,8 +1,10 @@
 {% extends 'organizer_app/base.html' %}
 
 {% block content %}
+    <section>
 
-    <h1 class="text-center mt-3 text-info">Welcome to PhotoAlbum Organizer</h1>
+    
+    <h1 class="text-center mt-3 text-info">Django Captcha Authentication</h1>
 
         <div class="captcha">
             {% if messages %}
@@ -18,6 +20,6 @@
                 <input type="submit" value="Submit" class="btn btn-primary">
             </form>
         </div> 
-        
+    </section>
 
 {% endblock %}
