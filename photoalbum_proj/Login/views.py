@@ -12,9 +12,16 @@ def login_user(request):
         password = request.POST['password']
         user = authenticate(request, username=username, password=password)
         if user is not None:
-            print('goes to captcha')
+            # print('goes to captcha')
+            form = MyForm(request.POST)
+            if form.is_valid():
+                messages.success(request, "Success!")
+                return render(request, 'organizer_app\poke.html',{})
+            else:
+                messages.error(request, "Wrong Captcha")
+            form = MyForm()
             login(request, user)
-            return render(request,'authentication/captcha.html')
+            return render(request,'authentication/captcha.html', {'form': form})
             # redirect to a success page.
         else: 
             print('returns to login')
