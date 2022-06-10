@@ -1,10 +1,3 @@
-// selector
-let savedCollectedCards = document.getElementById('savedCards');
-
-// listener
-savedCollectedCards.addEventListener('click', showCollection)
-
-
 // make on click search function, run a search when we click on the button, grab with jquery, to search pokemon in  
 
 $("#submit-button").click(function(event){
@@ -26,29 +19,22 @@ $("#submit-button").click(function(event){
             $("#card-container").append(pokemonCard);
         }
     });
-    // add pokemon card 
-    var collectedCards = [];
-    var collectedCards = localStorage.getItem("poke-card");
-
-    if (savedCollectedCards !== null) {
-        collectedCards= JSON.parse(savedCollectedCards);
-    }
-
-   
-    pokemonCard.addEventListener('click', function(){
-        collectedCards.push(pokemonCard.className);
-        localStorage.setItem("poke-card", JSON.stringify(collectedCards));
-        console.log(collectedCards);
-        alert(localStorage.getItem('poke-card'))
-    })
 });
 
-// selector
+function cardToHtmlId(dataTCG) {
+    for (i-0; i < dataTCG.length; i++) {
+        console.log(dataTCG[i]);
+        var cardImage = document.createElement("img");
+        resultsContainer.appendChild(cardImage);
+        cardImage.id = dataTCG[i].id;
+        cardImage.setAttribute("class", "resultsImage");
+        cardImage.src = dataTCG[i].images.small;
 
+        cardImage.addEventListener("click", function (e) {
+            console.log(this);
+            var cardID = this.id;
 
-
-// show saved pokemon cards collection
-
-function showCollection(){
-
+            cardClick(cardID);
+        })
+    }
 }
